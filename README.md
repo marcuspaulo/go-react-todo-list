@@ -76,6 +76,23 @@ export default function todos(state = INITIAL_STATE, action) {
 
 o import { connect } from 'react-redux'; - conecta o componente com algum estado do react
 
+# Instalação dos PropTypes
+
+```sh
+$ yarn add prop-types
+```
+
+# Instalando a ferramenta Reactotron
+
+1- Acessar o site: https://github.com/infinitered/reactotron
+2 - Clicar em release: Escolha uma versão estável.
+
+# Instalando o Reactotron no VSCode
+
+```sh
+$ yarn add reactotron-react-js
+```
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
