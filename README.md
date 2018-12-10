@@ -1,3 +1,83 @@
+# Módulo 3 - GoReact - Redux
+
+# Passo 1, criar um novo projeto com o create-react
+
+´´´sh
+\$ create-react-app.cmd app-goreact-03
+´´´
+
+# Passo 2, Instalar a dependência do Redux e React-redux
+
+´´´sh
+\$ yarn add redux react-redux
+´´´
+
+# Configurando o Redux e React-redux no projeto
+
+1 - Criar a pasta store, dentro do src, em seguida, criar o arquivo index.js
+
+```js
+import { createStore } from "redux";
+
+const store = createStore(() => {});
+
+export default store;
+```
+
+2 - Ajustar o arquivo APP.js, englobando o Provider do React-redux
+
+```js
+import React from "react";
+import { Provider } from "react-redux";
+
+import store from "./store";
+
+const App = () => (
+    <Provider store={store}>
+        <h1>Hello World</h1>
+    </Provider>
+);
+
+export default App;
+```
+
+# Instalando o eslint Airbnb (Desenvolvimento)
+
+```sh
+$ yarn add eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react -D
+```
+
+# Próximo passo, criar uma pasta reducer, dentro de store e adicionar o arquivo todo.js (Reducer sempre é uma função)
+
+# O Reducer altera o estado.
+
+--> O State é exatamente o estado antigo do objeto (Antes de sofrer alterações)
+--> Action: é a ação que foi disparada pela aplicação. Todos os redux's escutam todas as ações. Porém, dentro de cada redux é que define onde será alterado. Ex: type: 'ADD_TODO'.
+
+```js
+export default function todos(state, action) {}
+```
+
+# Ajustando o Reducer
+
+```js
+const INITIAL_STATE = [
+    { id: 1, text: "Fazer Café" },
+    { id: 2, text: "Estudar React" }
+];
+
+export default function todos(state = INITIAL_STATE, action) {
+    switch (action.type) {
+        default:
+            return state;
+    }
+}
+```
+
+o import { connect } from 'react-redux'; - conecta o componente com algum estado do react
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
